@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memorial Virtual | Huellas al Cielo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2C5F5D',
+                        secondary: '#F4F1EA',
+                        accent: '#D9A08B',
+                        dark: '#1a1a1a',
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #F4F1EA; color: #2C5F5D; }
+        .glass-nav { background: rgba(244, 241, 234, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
+        .masonry-col { break-inside: avoid; margin-bottom: 1.5rem; }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <!-- NAVIGATION -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
+                    <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zm1 11H9v-2h2v2zm0-4H9V5h2v4z"/></svg>
+                    </div>
+                    <span class="font-serif text-xl font-bold tracking-wide text-primary">Huellas al Cielo</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="index.html" class="text-sm font-medium text-primary/80 hover:text-accent transition-colors">Inicio</a>
+                    <a href="nosotros.html" class="text-sm font-medium text-primary/80 hover:text-accent transition-colors">Nosotros</a>
+                    <a href="servicios.html" class="text-sm font-medium text-primary/80 hover:text-accent transition-colors">Servicios</a>
+                    <a href="urnas.html" class="text-sm font-medium text-primary/80 hover:text-accent transition-colors">Urnas</a>
+                    <a href="memorial.html" class="text-sm font-medium text-primary font-bold">Memorial</a>
+                    <a href="faq.html" class="text-sm font-medium text-primary/80 hover:text-accent transition-colors">Preguntas</a>
+                    <a href="contacto.html" class="bg-primary hover:bg-[#1f4543] text-white px-5 py-2 rounded-full text-sm font-semibold transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5">Contactar</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HEADER TITLE & ACTIONS -->
+    <section class="pt-32 pb-8 text-center px-4 relative">
+        <h1 class="font-serif text-4xl md:text-5xl text-primary mb-4">Mascotas en el Recuerdo</h1>
+        <p class="text-gray-500 max-w-2xl mx-auto mb-8">Un espacio eterno para honrar la vida y el amor que nos regalaron.</p>
+        
+        <button onclick="toggleModal('upload-modal')" class="bg-accent text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all text-sm inline-flex items-center gap-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+            Subir Recuerdo
+        </button>
+    </section>
+
+    <!-- MASONRY GALLERY -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+        <div class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+            
+            <!-- Item 1 -->
+            <article class="break-inside-avoid bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 group">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?q=80&w=1000&auto=format&fit=crop" class="w-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Mascota">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-serif text-xl text-primary font-bold">Max</h3>
+                    <p class="text-xs text-gray-400 mb-2 font-serif italic">2010 - 2024</p>
+                    <p class="text-sm text-gray-600 leading-relaxed mb-4">"Fuiste el mejor compañero de aventuras. Siempre correrás libre en nuestros corazones."</p>
+                    <div class="flex items-center justify-between border-t border-gray-100 pt-4">
+                        <span class="text-xs text-gray-400">Familia Pérez</span>
+                        <button onclick="lightCandle(this)" class="text-gray-400 hover:text-accent transition-colors flex items-center gap-1 group/btn" title="Encender Vela">
+                            <span class="candle-count text-xs font-bold">12</span>
+                            <svg class="w-5 h-5 transition-all duration-500 group-hover/btn:text-yellow-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2c-.5 0-1 .4-1 .9v3.2c0 .5.4.9 1 .9s1-.4 1-.9V2.9c0-.5-.5-.9-1-.9zm0 6c-2.8 0-5 2.2-5 5 0 2 1.2 3.8 2.9 4.6-.6.8-1 1.8-1 2.9 0 .8.7 1.5 1.5 1.5h3.2c.8 0 1.5-.7 1.5-1.5 0-1.1-.4-2.1-1-2.9 1.7-.8 2.9-2.6 2.9-4.6 0-2.8-2.2-5-5-5z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Item 2 -->
+            <article class="break-inside-avoid bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 group">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=1000&auto=format&fit=crop" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500" alt="Mascota">
+                </div>
+                <div class="p-6">
+                    <h3 class="font-serif text-xl text-primary font-bold">Luna</h3>
+                    <p class="text-xs text-gray-400 mb-2 font-serif italic">2015 - 2023</p>
+                    <p class="text-sm text-gray-600 leading-relaxed mb-4">"Tu ronroneo era nuestra paz. Gracias por elegirnos."</p>
+                    <div class="flex items-center justify-between border-t border-gray-100 pt-4">
+                        <span class="text-xs text-gray-400">Familia Gonzalez</span>
+                        <button onclick="lightCandle(this)" class="text-gray-400 hover:text-accent transition-colors flex items-center gap-1 group/btn">
+                            <span class="candle-count text-xs font-bold">8</span>
+                            <svg class="w-5 h-5 transition-all duration-500 group-hover/btn:text-yellow-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2c-.5 0-1 .4-1 .9v3.2c0 .5.4.9 1 .9s1-.4 1-.9V2.9c0-.5-.5-.9-1-.9zm0 6c-2.8 0-5 2.2-5 5 0 2 1.2 3.8 2.9 4.6-.6.8-1 1.8-1 2.9 0 .8.7 1.5 1.5 1.5h3.2c.8 0 1.5-.7 1.5-1.5 0-1.1-.4-2.1-1-2.9 1.7-.8 2.9-2.6 2.9-4.6 0-2.8-2.2-5-5-5z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Item 3 -->
+            <article class="break-inside-avoid bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 group">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&w=1000&auto=format&fit=crop" class="w-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Mascota">
+                </div>
+                <div class="p-6">
+                    <h3 class="font-serif text-xl text-primary font-bold">Rocky</h3>
+                    <p class="text-xs text-gray-400 mb-2 font-serif italic">2012 - 2024</p>
+                    <p class="text-sm text-gray-600 leading-relaxed mb-4">"Fiel, valiente y amoroso. Te extrañaremos cada día."</p>
+                    <div class="flex items-center justify-between border-t border-gray-100 pt-4">
+                        <span class="text-xs text-gray-400">Familia Soto</span>
+                        <button onclick="lightCandle(this)" class="text-gray-400 hover:text-accent transition-colors flex items-center gap-1 group/btn">
+                            <span class="candle-count text-xs font-bold">24</span>
+                            <svg class="w-5 h-5 transition-all duration-500 group-hover/btn:text-yellow-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2c-.5 0-1 .4-1 .9v3.2c0 .5.4.9 1 .9s1-.4 1-.9V2.9c0-.5-.5-.9-1-.9zm0 6c-2.8 0-5 2.2-5 5 0 2 1.2 3.8 2.9 4.6-.6.8-1 1.8-1 2.9 0 .8.7 1.5 1.5 1.5h3.2c.8 0 1.5-.7 1.5-1.5 0-1.1-.4-2.1-1-2.9 1.7-.8 2.9-2.6 2.9-4.6 0-2.8-2.2-5-5-5z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- UPLOAD MODAL -->
+    <div id="upload-modal" class="fixed inset-0 z-[100] hidden">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-primary/40 backdrop-blur-sm" onclick="toggleModal('upload-modal')"></div>
+        
+        <!-- Modal Content -->
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-lg bg-white rounded-3xl p-8 shadow-2xl animate-fade-in">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="font-serif text-2xl text-primary font-bold">Dedicado a...</h3>
+                <button onclick="toggleModal('upload-modal')" class="text-gray-400 hover:text-red-500">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+            
+            <form class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold uppercase text-gray-500 mb-1">Nombre de la Mascota</label>
+                    <input type="text" class="w-full bg-[#F9F7F5] border-0 rounded-lg px-4 py-3 text-primary focus:ring-2 focus:ring-accent" placeholder="Ej: Rocky">
+                </div>
+                
+                <div>
+                    <label class="block text-xs font-bold uppercase text-gray-500 mb-1">Tu Mensaje</label>
+                    <textarea rows="3" class="w-full bg-[#F9F7F5] border-0 rounded-lg px-4 py-3 text-primary focus:ring-2 focus:ring-accent" placeholder="Escribe unas palabras..."></textarea>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase text-gray-500 mb-1">Foto (Opcional)</label>
+                    <div class="flex items-center justify-center w-full">
+                        <label class="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer bg-[#F9F7F5] hover:bg-gray-100 transition-colors">
+                            <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                                <svg class="w-8 h-8 mb-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                                <p class="text-xs text-gray-500">Haz clic para subir imagen</p>
+                            </div>
+                            <input type="file" class="hidden" />
+                        </label>
+                    </div>
+                </div>
+
+                <div class="pt-4">
+                    <button type="button" onclick="toggleModal('upload-modal')" class="w-full bg-primary text-white font-bold py-3 rounded-xl hover:bg-[#1f4543] transition-colors shadow-lg">Publicar Homenaje</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-primary text-white pt-20 pb-10 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                     <div class="flex items-center gap-2 mb-6">
+                        <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zm1 11H9v-2h2v2zm0-4H9V5h2v4z"/></svg>
+                        </div>
+                        <span class="font-serif text-xl font-bold tracking-wide">Huellas al Cielo</span>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed max-w-sm">Acompañándote en los momentos difíciles con empatía, respeto y dignidad. Somos más que un servicio, somos un apoyo.</p>
+                </div>
+                <div>
+                     <h4 class="font-bold mb-4 text-accent">Enlaces Rápidos</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="index.html" class="hover:text-white transition-colors">Inicio</a></li>
+                        <li><a href="servicios.html" class="hover:text-white transition-colors">Servicios</a></li>
+                        <li><a href="memorial.html" class="hover:text-white transition-colors">Memorial Virtual</a></li>
+                        <li><a href="contacto.html" class="hover:text-white transition-colors">Contacto</a></li>
+                    </ul>
+                </div>
+                 <div>
+                    <h4 class="font-bold mb-4 text-accent">Contacto</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li>+56 9 1234 5678</li>
+                        <li>contacto@huellasalcielo.cl</li>
+                        <li>Santiago, Chile</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 text-center text-xs text-gray-400">
+                <p>&copy; 2024 Huellas al Cielo. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleModal(modalID){
+            const modal = document.getElementById(modalID);
+            modal.classList.toggle('hidden');
+        }
+
+        function lightCandle(btn) {
+            const icon = btn.querySelector('svg');
+            const countSpan = btn.querySelector('.candle-count');
+            
+            // Effect
+            icon.classList.toggle('text-yellow-400'); // Toggle yellow color
+            icon.classList.add('animate-pulse'); // Add pulse animation
+            
+            // Increment logic (simple simulation)
+            let count = parseInt(countSpan.innerText);
+            if(icon.classList.contains('text-yellow-400')) {
+                count++;
+            } else {
+                count--;
+                icon.classList.remove('animate-pulse');
+            }
+            countSpan.innerText = count;
+        }
+    </script>
+</body>
+</html>

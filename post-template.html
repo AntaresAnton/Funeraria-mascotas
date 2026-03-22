@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Redes Sociales - 1920x1080</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #2C5F5D;
+            --color-secondary: #D9A08B;
+            --color-bg: #F4F1EA;
+        }
+        body {
+            background-color: #1a1a1a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            overflow: auto;
+        }
+        
+        /* Contenedor principal de 1920x1080 */
+        #canvas {
+            width: 1920px;
+            height: 1080px;
+            background-color: var(--color-bg);
+            position: relative;
+            flex-shrink: 0;
+            overflow: hidden;
+            box-shadow: 0 0 100px rgba(0,0,0,0.5);
+            
+            /* Layout de Grid: 45% Imagen, 55% Contenido */
+            display: grid;
+            grid-template-columns: 48% 52%;
+        }
+
+        /* Utilidades de Tipografía */
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .font-sans { font-family: 'Inter', sans-serif; }
+
+        /* Ajuste de escala para visualizar en pantallas más pequeñas */
+        @media (max-width: 1930px) {
+            #canvas {
+                zoom: 0.5; /* Escala rápida para visualización */
+                /* Nota: Al exportar, asegúrate de que el zoom esté al 100% o usa una herramienta de captura de nodo */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- LIENZO DE DISEÑO (1920x1080) -->
+    <div id="canvas">
+        
+        <!-- COLUMNA IZQUIERDA: IMAGEN -->
+        <div class="relative h-full overflow-hidden bg-gray-200">
+            <!-- 
+                =============================================
+                CAMBIAR IMAGEN AQUÍ 
+                Pega la URL de tu imagen en el 'src'
+                =============================================
+            -->
+            <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&w=2069&auto=format&fit=crop" 
+                 alt="Mascota" 
+                 class="absolute inset-0 w-full h-full object-cover filter brightness-[0.95]">
+            
+            <!-- Marco decorativo interno sobre la imagen -->
+            <div class="absolute inset-8 border border-white/30 pointer-events-none"></div>
+            
+            <!-- Etiqueta flotante sobre imagen -->
+            <div class="absolute bottom-12 left-12 bg-white/90 backdrop-blur-md px-6 py-3 rounded-none border-l-4 border-[#2C5F5D]">
+                <span class="text-[#2C5F5D] font-serif italic text-xl">"Amigos para siempre"</span>
+            </div>
+        </div>
+
+        <!-- COLUMNA DERECHA: CONTENIDO -->
+        <!-- Fondo con color primario y textura sutil -->
+        <div class="bg-[#2C5F5D] text-white flex flex-col justify-center px-24 relative isolate">
+            
+            <!-- Elemento Decorativo: Círculo grande ornamental -->
+            <div class="absolute -top-20 -right-20 w-[500px] h-[500px] bg-[#D9A08B]/5 rounded-full blur-3xl -z-10"></div>
+            
+            <!-- Logo / Cabecera -->
+            <div class="absolute top-16 left-24 flex items-center gap-4 opacity-90">
+                <div class="w-10 h-10 border border-[#D9A08B] rounded-full flex items-center justify-center">
+                    <span class="text-[#D9A08B] text-xs">FM</span>
+                </div>
+                <span class="text-sm tracking-[0.25em] font-light uppercase text-[#D9A08B]">Funeraria de Mascotas</span>
+            </div>
+
+            <!-- Contenido Principal -->
+            <div class="space-y-10 z-10 mt-10">
+                <!-- Línea de acento -->
+                <div class="w-20 h-1 bg-[#D9A08B]"></div>
+                
+                <!-- Título Editable -->
+                <h1 class="font-serif text-[80px] leading-[1.1]">
+                    <span class="block text-[#D9A08B] italic font-light text-[60px] mb-2">Honramos</span>
+                    La Memoria de<br>tu Fiel Compañero.
+                </h1>
+                
+                <!-- Párrafo Editable -->
+                <p class="text-2xl text-gray-200 font-light max-w-2xl leading-relaxed text-opacity-90">
+                    Entendemos que no es solo una mascota, es familia. <br>
+                    Te acompañamos en una despedida llena de dignidad, <br> respeto y amor incondicional.
+                </p>
+
+                <!-- Call to Action / Info -->
+                <div class="pt-10 flex gap-8">
+                    <div class="group flex items-center gap-5 pr-8 border-r border-white/20">
+                        <div class="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-[#D9A08B] transition-colors duration-300">
+                             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                        </div>
+                        <div>
+                            <p class="text-xs uppercase tracking-wider text-[#D9A08B] mb-1">Urgencias 24/7</p>
+                            <p class="font-serif text-2xl">+56 9 1234 5678</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center gap-5">
+                         <div class="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center">
+                            <span class="text-xl">📍</span>
+                        </div>
+                        <div>
+                             <p class="text-xs uppercase tracking-wider text-[#D9A08B] mb-1">Atención en</p>
+                             <p class="font-serif text-2xl">San Bernardo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer: Web -->
+            <div class="absolute bottom-16 left-24">
+                <p class="text-lg font-light tracking-wide opacity-60">www.funerariasanbernardo.cl</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div style="position: fixed; top: 20px; left: 20px; background: rgba(0,0,0,0.8); color: white; padding: 15px; border-radius: 8px; font-size: 14px; max-width: 300px;">
+        <p><strong>Vista Previa (50% Zoom)</strong></p>
+        <p style="color: #ccc; margin-top: 5px;">Este archivo está diseñado en 1920x1080px reales.</p>
+    </div>
+
+</body>
+</html>

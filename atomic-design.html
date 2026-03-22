@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huellas al Cielo - Design System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2C5F5D',
+                        secondary: '#F4F1EA',
+                        accent: '#D9A08B',
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(44, 95, 93, 0.1)',
+                        'glow': '0 0 15px rgba(217, 160, 139, 0.5)',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #F4F1EA;
+            color: #2C5F5D;
+        }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+        /* Estilos Personalizados "Orgánicos" */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 8px 32px 0 rgba(44, 95, 93, 0.05);
+        }
+
+        .soft-card-hover {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .soft-card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -10px rgba(44, 95, 93, 0.15);
+        }
+
+        .btn-organic {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(217, 160, 139, 0.3);
+        }
+        .btn-organic:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(217, 160, 139, 0.4);
+        }
+        
+        .organic-border {
+            border-radius: 20px;
+        }
+
+        /* Degradado sutil para el Hero */
+        .hero-gradient {
+            background: linear-gradient(135deg, #2C5F5D 0%, #1f4543 100%);
+            position: relative;
+        }
+        .hero-pattern::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.4;
+        }
+    </style>
+</head>
+<body class="p-8">
+
+    <section class="max-w-4xl mx-auto">
+        <h1 class="text-3xl font-bold mb-8 text-[#2C5F5D] border-b pb-4">Guía de Componentes Atómicos</h1>
+
+        <!-- 0. Fundamentos (Design Tokens) -->
+        <div class="mb-12 border-b border-gray-200 pb-12">
+            <h2 class="text-xl mb-6 text-gray-600 uppercase tracking-widest text-sm font-bold">0. Fundamentos (Design Tokens)</h2>
+            
+            <!-- Colores -->
+            <div class="mb-8">
+                <h3 class="font-bold text-[#2C5F5D] mb-4 text-lg">Paleta de Colores</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="space-y-2">
+                        <div class="h-24 rounded-lg bg-[#2C5F5D] shadow-md flex items-end p-2 cursor-pointer hover:scale-105 transition-transform">
+                            <span class="bg-white/90 px-2 py-1 text-xs rounded font-mono text-[#2C5F5D] font-bold">#2C5F5D</span>
+                        </div>
+                        <div>
+                            <p class="text-sm font-bold text-gray-800">Verde Bosque</p>
+                            <p class="text-xs text-gray-500">Primario / Branding</p>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="h-24 rounded-lg bg-[#D9A08B] shadow-md flex items-end p-2 cursor-pointer hover:scale-105 transition-transform">
+                            <span class="bg-white/90 px-2 py-1 text-xs rounded font-mono text-[#D9A08B] font-bold">#D9A08B</span>
+                        </div>
+                        <div>
+                            <p class="text-sm font-bold text-gray-800">Terracota</p>
+                            <p class="text-xs text-gray-500">Acento / Acción</p>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="h-24 rounded-lg bg-[#F4F1EA] shadow-inner border border-gray-200 flex items-end p-2">
+                            <span class="bg-white/90 px-2 py-1 text-xs rounded font-mono text-gray-600 font-bold">#F4F1EA</span>
+                        </div>
+                        <div>
+                            <p class="text-sm font-bold text-gray-800">Crema Suave</p>
+                            <p class="text-xs text-gray-500">Fondo General</p>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="h-24 rounded-lg bg-white shadow-sm border border-gray-100 flex items-end p-2">
+                            <span class="bg-gray-100 px-2 py-1 text-xs rounded font-mono text-gray-600 font-bold">#FFFFFF</span>
+                        </div>
+                        <div>
+                            <p class="text-sm font-bold text-gray-800">Blanco Puro</p>
+                            <p class="text-xs text-gray-500">Cartas / Superficies</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tipografía -->
+            <div class="mb-8 p-6 bg-white rounded-xl shadow-sm border border-gray-100">
+                <h3 class="font-bold text-[#2C5F5D] mb-4 text-lg">Tipografía</h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="space-y-4">
+                        <p class="text-xs uppercase text-gray-400 tracking-wider">Encabezados (Playfair Display)</p>
+                        <h1 class="text-4xl text-[#2C5F5D]">H1. Adiós con Amor</h1>
+                        <h2 class="text-3xl text-[#2C5F5D]">H2. Servicios de Paz</h2>
+                        <h3 class="text-xl text-[#2C5F5D] font-bold">H3. Detalles del proceso</h3>
+                    </div>
+                    <div class="space-y-4 font-sans">
+                        <p class="text-xs uppercase text-gray-400 tracking-wider">Cuerpo (Inter)</p>
+                        <p class="text-base text-gray-700"><strong>Párrafo Base:</strong> Entendemos el vínculo único con tu compañero. Brindamos servicios de despedida con dignidad.</p>
+                        <p class="text-sm text-gray-500"><strong>Texto Pequeño:</strong> Información legal o secundaria.</p>
+                        <button class="text-sm font-bold uppercase tracking-widest text-[#D9A08B]">Botones / Enlaces</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formas y Sombras -->
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="p-6 glass-panel organic-border">
+                   <h3 class="font-bold text-[#2C5F5D] mb-4 text-lg">Formas Sutiles (Organic Shapes)</h3>
+                    <div class="flex gap-4 items-center justify-around">
+                        <div class="text-center space-y-2">
+                            <div class="w-16 h-16 bg-[#2C5F5D] rounded-[18px] mx-auto transition-all hover:rounded-[24px]"></div>
+                            <code class="text-xs text-gray-500">rounded-[20px]</code>
+                        </div>
+                        <div class="text-center space-y-2">
+                           <div class="w-16 h-16 bg-[#D9A08B] rounded-full mx-auto"></div>
+                            <code class="text-xs text-gray-500">rounded-full</code>
+                        </div>
+                        <div class="text-center space-y-2">
+                             <div class="w-16 h-16 border-2 border-[#2C5F5D] rounded-tl-3xl rounded-br-3xl rounded-tr-lg rounded-bl-lg mx-auto flex items-center justify-center">
+                            </div>
+                            <code class="text-xs text-gray-500">Custom Blob</code>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="p-6 bg-[#F4F1EA] organic-border border border-white/50">
+                    <h3 class="font-bold text-[#2C5F5D] mb-4 text-lg">Profundidad (Soft Shadows)</h3>
+                    <div class="flex gap-4 items-center justify-around">
+                        <div class="w-16 h-16 bg-white organic-border shadow-sm flex items-center justify-center text-xs text-gray-400">sm</div>
+                        <div class="w-16 h-16 bg-white organic-border shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex items-center justify-center text-xs text-gray-400">soft</div>
+                        <div class="w-16 h-16 bg-white organic-border shadow-[0_20px_50px_rgba(44,95,93,0.15)] flex items-center justify-center text-xs font-bold text-[#2C5F5D]">float</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-12">
+            <h2 class="text-xl mb-4 text-gray-600 uppercase tracking-widest text-sm font-bold">1. Átomos (Componentes Base 'Huellas al Cielo')</h2>
+            <div class="flex flex-wrap gap-12 items-start glass-panel p-10 organic-border">
+                
+                <!-- 1. Botón Primario -->
+                <div>
+                     <p class="text-[10px] text-gray-400 uppercase tracking-wider mb-3">Primary Button</p>
+                    <button class="bg-[#2C5F5D] hover:bg-[#1f4543] text-white px-8 py-3 rounded-full text-sm font-semibold transition-all duration-300 transform hover:scale-[1.02] shadow-[0_4px_20px_-5px_rgba(44,95,93,0.3)] flex items-center gap-2">
+                        <span>Contactar Ahora</span>
+                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    </button>
+                </div>
+
+                <!-- 2. Badge de Servicio -->
+                <div>
+                    <p class="text-[10px] text-gray-400 uppercase tracking-wider mb-3">Service Badge</p>
+                    <span class="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-semibold bg-[#D9A08B]/10 text-[#D9A08B] border border-[#D9A08B]/20 tracking-wide">
+                        <span class="w-1.5 h-1.5 rounded-full bg-[#D9A08B] mr-2"></span>
+                        Cremación Individual
+                    </span>
+                </div>
+
+                <!-- 3. Form Input Estilizado -->
+                <div class="w-full max-w-xs">
+                    <p class="text-[10px] text-gray-400 uppercase tracking-wider mb-3">Accessible Input</p>
+                    <div class="relative">
+                        <input type="text" id="floating_input" class="block px-4 py-3 w-full text-sm text-[#2C5F5D] bg-[#F9F7F5] rounded-lg border border-gray-200 appearance-none focus:outline-none focus:ring-0 focus:border-[#D9A08B] peer transition-colors" placeholder=" " />
+                        <label for="floating_input" class="absolute text-sm text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-[#F9F7F5] px-2 peer-focus:px-2 peer-focus:text-[#D9A08B] peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-2">Nombre de mascota</label>
+                        <div class="absolute inset-y-0 right-3 flex items-center pointer-events-none text-gray-400 peer-focus:text-[#D9A08B] transition-colors">
+                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. WhatsApp Flotante -->
+                 <div>
+                    <p class="text-[10px] text-gray-400 uppercase tracking-wider mb-3">Floating Action</p>
+                    <button class="bg-[#25D366] hover:bg-[#1fad53] text-white w-14 h-14 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex items-center justify-center relative group">
+                        <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.008-.57-.008-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                        
+                        <!-- Tooltip on Hover -->
+                        <span class="absolute right-16 px-3 py-1 bg-gray-800 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+                            Contáctanos
+                        </span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="mb-12">
+            <h2 class="text-xl mb-4 text-gray-600 uppercase tracking-widest text-sm font-bold">2. Moléculas (Componentes de UI)</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Tarjeta de Servicio: Estilo Clásico y Editorial -->
+                <!-- Menos efectos "fancy", más enfoque en tipografía y espacio negativo -->
+                <article class="bg-white p-8 rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-gray-100 hover:border-[#D9A08B]/30 transition-colors duration-300 group flex flex-col h-full">
+                    <div class="mb-6 p-3 bg-[#F4F1EA] w-fit rounded-lg text-[#2C5F5D]">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                    </div>
+
+                    <h3 class="text-2xl font-serif text-[#2C5F5D] mb-3 leading-tight group-hover:text-[#D9A08B] transition-colors">Cremación Individual</h3>
+                    
+                    <p class="text-gray-600 text-sm leading-relaxed mb-8 font-light line-clamp-3">
+                        Garantizamos la individualidad absoluta en el proceso. Una despedida digna que incluye certificado de autenticidad y entrega de cenizas en ánfora conmemorativa.
+                    </p>
+
+                    <div class="mt-auto flex items-center justify-between border-t border-gray-50 pt-6">
+                        <div class="flex flex-col">
+                            <span class="text-[10px] uppercase tracking-widest text-gray-400 font-semibold">Valor Referencial</span>
+                            <span class="font-serif text-lg text-[#2C5F5D]">$85.000</span>
+                        </div>
+                        <button class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 group-hover:bg-[#2C5F5D] group-hover:text-white group-hover:border-[#2C5F5D] transition-all duration-300">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Elemento de Lista con Icono (Feature) -->
+                <div class="flex items-start gap-5 p-6 rounded-xl bg-white border border-gray-100 hover:shadow-md transition-shadow">
+                    <div class="flex-shrink-0">
+                        <div class="w-12 h-12 rounded-full bg-[#E8F0EF] text-[#2C5F5D] flex items-center justify-center">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="font-serif text-lg text-[#2C5F5D] mb-1">Certificación Garantizada</h4>
+                        <p class="text-xs text-gray-500 mb-3">Documentación oficial de todo el proceso.</p>
+                        <a href="#" class="text-[#D9A08B] text-xs font-bold uppercase tracking-wider hover:underline">Ver ejemplo</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div>
+            <h2 class="text-xl mb-4 text-gray-600 uppercase tracking-widest text-sm font-bold">3. Organismo (Hero Section)</h2>
+            
+            <div class="relative hero-gradient organic-border overflow-hidden text-white p-12 lg:p-16 shadow-2xl hero-pattern">
+                <!-- Elementos flotantes decorativos -->
+                <div class="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -mr-20 -mt-20 animate-pulse"></div>
+                <div class="absolute bottom-0 left-0 w-64 h-64 bg-[#D9A08B]/20 rounded-full blur-3xl -ml-20 -mb-20"></div>
+
+                <div class="relative z-10 grid md:grid-cols-2 gap-12 items-center">
+                    <div class="max-w-lg">
+                        <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-xs font-semibold mb-6 border border-white/10">
+                            <span class="w-2 h-2 bg-[#D9A08B] rounded-full animate-pulse"></span>
+                            Estamos contigo las 24 horas
+                        </div>
+                        
+                        <h2 class="text-4xl md:text-5xl mb-6 leading-tight font-serif tracking-tight">Un adiós lleno de <br/><span class="text-[#D9A08B] italic">amor y respeto</span></h2>
+                        <p class="text-teal-50 mb-10 text-lg font-light leading-relaxed">Entendemos el vínculo único con tu compañero. Brindamos servicios de despedida con la dignidad que merecen en San Bernardo, acompañándote en cada paso.</p>
+                        
+                        <div class="flex flex-wrap gap-4">
+                            <button class="bg-[#D9A08B] hover:bg-[#c58d78] text-white px-8 py-4 rounded-full font-bold shadow-lg btn-organic">
+                                Solicitar Retiro
+                            </button>
+                            <button class="bg-white/10 backdrop-blur-sm border border-white/30 hover:bg-white/20 text-white px-8 py-4 rounded-full font-semibold transition-all hover:scale-105">
+                                Ver Servicios
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Tarjeta flotante en el Hero -->
+                    <div class="hidden md:block relative">
+                         <div class="glass-panel p-6 rounded-3xl absolute -right-4 top-10 w-64 transform rotate-3 shadow-xl animate-[float_6s_ease-in-out_infinite]">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 bg-[#2C5F5D] rounded-full flex items-center justify-center text-white">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-500 font-bold uppercase">Estado</p>
+                                    <p class="text-sm font-bold text-[#2C5F5D]">Servicio Activo</p>
+                                </div>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-1.5 mb-1">
+                                <div class="bg-[#D9A08B] h-1.5 rounded-full" style="width: 70%"></div>
+                            </div>
+                            <p class="text-xs text-right text-gray-400">Llegada en 20 min</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+</body>
+</html>

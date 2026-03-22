@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios | Huellas al Cielo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2C5F5D',
+                        secondary: '#F4F1EA',
+                        accent: '#D9A08B',
+                        dark: '#1a1a1a',
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'soft': '0 10px 40px -10px rgba(44, 95, 93, 0.1)',
+                        'card': '0 0 20px rgba(0,0,0,0.03)',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #F4F1EA; color: #2C5F5D; }
+        .glass-nav { background: rgba(244, 241, 234, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <!-- NAVIGATION -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
+                    <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zm1 11H9v-2h2v2zm0-4H9V5h2v4z"/></svg>
+                    </div>
+                    <span class="font-serif text-xl font-bold tracking-wide text-primary">Huellas al Cielo</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="index.html" class="text-sm font-medium text-primary/80 hover:text-accent transition-colors">Inicio</a>
+                    <a href="nosotros.html" class="text-sm font-medium text-primary/80 hover:text-accent transition-colors">Nosotros</a>
+                    <a href="servicios.html" class="text-sm font-medium text-primary font-bold">Servicios</a>
+                    <a href="urnas.html" class="text-sm font-medium text-primary/80 hover:text-accent transition-colors">Urnas</a>
+                    <a href="memorial.html" class="text-sm font-medium text-primary/80 hover:text-accent transition-colors">Memorial</a>
+                    <a href="faq.html" class="text-sm font-medium text-primary/80 hover:text-accent transition-colors">Preguntas</a>
+                    <a href="contacto.html" class="bg-primary hover:bg-[#1f4543] text-white px-5 py-2 rounded-full text-sm font-semibold transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5">Contactar</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HEADER TITLE -->
+    <section class="pt-32 pb-12 text-center px-4">
+        <h1 class="font-serif text-4xl md:text-5xl text-primary mb-4">Nuestros Planes</h1>
+        <p class="text-gray-500 max-w-2xl mx-auto">Transparencia y claridad en los momentos que más importan. Elige la despedida adecuada para tu fiel amigo.</p>
+    </section>
+
+    <!-- SERVICES DETAILS + CALCULATOR Grid -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+        <div class="grid lg:grid-cols-2 gap-12">
+            
+            <!-- LEFT: DETAILED INFO -->
+            <div class="space-y-8">
+                <!-- Individual -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
+                    <div class="flex items-center gap-4 mb-4">
+                         <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center text-accent">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 13l4 4L19 7"/></svg>
+                         </div>
+                         <h2 class="font-serif text-2xl text-primary">Cremación Individual</h2>
+                    </div>
+                    <p class="text-gray-500 text-sm mb-4 leading-relaxed">
+                        Este servicio garantiza que tu mascota sea cremada sola en la cámara. Es la opción ideal para familias que desean conservar las cenizas de su compañero.
+                    </p>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li class="flex gap-2"><span class="text-accent">✓</span> Retiro prioritario en domicilio (24/7).</li>
+                        <li class="flex gap-2"><span class="text-accent">✓</span> Entrega de cenizas en ánfora de greda o madera.</li>
+                        <li class="flex gap-2"><span class="text-accent">✓</span> Certificado físico de cremación.</li>
+                        <li class="flex gap-2"><span class="text-accent">✓</span> Opción de presenciar el ingreso (Cita previa).</li>
+                    </ul>
+                </div>
+
+                <!-- Colectiva -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
+                    <div class="flex items-center gap-4 mb-4">
+                         <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                         </div>
+                         <h2 class="font-serif text-2xl text-primary">Cremación Compartida</h2>
+                    </div>
+                    <p class="text-gray-500 text-sm mb-4 leading-relaxed">
+                        Una despedida digna realizada junto a otras mascotas. Las cenizas son esparcidas en nuestro Jardín Memorial de forma respetuosa. **No hay devolución de cenizas.**
+                    </p>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li class="flex gap-2"><span class="text-primary">✓</span> Retiro en domicilio (Horario hábil).</li>
+                        <li class="flex gap-2"><span class="text-primary">✓</span> Ceremonia de despedida simbólica.</li>
+                        <li class="flex gap-2"><span class="text-primary">✓</span> Constancia digital de cremación.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- RIGHT: CALCULATOR -->
+            <div class="relative">
+                <div class="sticky top-28">
+                    <div class="bg-primary rounded-3xl p-8 md:p-10 text-white shadow-2xl relative overflow-hidden">
+                        <!-- Decorative bg -->
+                        <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
+                        
+                        <h3 class="font-serif text-3xl mb-2">Cotiza tu Plan</h3>
+                        <p class="text-white/70 text-sm mb-8">Obtén un presupuesto estimado al instante.</p>
+
+                        <form id="quote-form" class="space-y-6 relative z-10">
+                            <!-- Species -->
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-accent mb-2">Especie</label>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <label class="cursor-pointer">
+                                        <input type="radio" name="species" value="dog" class="peer sr-only" checked onchange="calculatePrice()">
+                                        <div class="px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-center peer-checked:bg-white peer-checked:text-primary transition-all hover:bg-white/5">
+                                            Perro
+                                        </div>
+                                    </label>
+                                    <label class="cursor-pointer">
+                                        <input type="radio" name="species" value="cat" class="peer sr-only" onchange="calculatePrice()">
+                                        <div class="px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-center peer-checked:bg-white peer-checked:text-primary transition-all hover:bg-white/5">
+                                            Gato / Otro
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Weight (Hidden for Cat) -->
+                            <div id="weight-group" class="transition-all duration-300">
+                                <label class="block text-xs font-bold uppercase tracking-wider text-accent mb-2">Peso Aproximado</label>
+                                <select id="weight" onchange="calculatePrice()" class="w-full bg-[#1f4543] border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-accent appearance-none">
+                                    <option value="small">Pequeño (0 - 10 kg)</option>
+                                    <option value="medium">Mediano (10 - 25 kg)</option>
+                                    <option value="large">Grande (25+ kg)</option>
+                                </select>
+                            </div>
+
+                            <!-- Service Type -->
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-accent mb-2">Tipo de Servicio</label>
+                                <select id="service" onchange="calculatePrice()" class="w-full bg-[#1f4543] border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-accent appearance-none">
+                                    <option value="individual">Cremación Individual (Con cenizas)</option>
+                                    <option value="shared">Cremación Compartida (Sin cenizas)</option>
+                                </select>
+                            </div>
+
+                            <!-- Result -->
+                            <div class="pt-6 border-t border-white/10 relative">
+                                <div class="flex justify-between items-end">
+                                    <span class="text-sm text-white/70 mb-1">Valor Estimado:</span>
+                                    <span id="price-display" class="font-serif text-4xl font-bold text-white">$85.000</span>
+                                </div>
+                                <p class="text-[10px] text-white/50 mt-2">*Precios referenciales para RM. Varían según comuna de retiro.</p>
+                            </div>
+
+                            <a href="contacto.html" class="block w-full text-center bg-accent text-primary font-bold py-4 rounded-xl hover:bg-white transition-colors mt-4">
+                                Contratar este Plan
+                            </a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-primary text-white pt-20 pb-10 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                     <div class="flex items-center gap-2 mb-6">
+                        <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zm1 11H9v-2h2v2zm0-4H9V5h2v4z"/></svg>
+                        </div>
+                        <span class="font-serif text-xl font-bold tracking-wide">Huellas al Cielo</span>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed max-w-sm">Acompañándote en los momentos difíciles con empatía, respeto y dignidad. Somos más que un servicio, somos un apoyo.</p>
+                </div>
+                <div>
+                     <h4 class="font-bold mb-4 text-accent">Enlaces Rápidos</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="index.html" class="hover:text-white transition-colors">Inicio</a></li>
+                        <li><a href="servicios.html" class="hover:text-white transition-colors">Servicios</a></li>
+                        <li><a href="memorial.html" class="hover:text-white transition-colors">Memorial Virtual</a></li>
+                        <li><a href="contacto.html" class="hover:text-white transition-colors">Contacto</a></li>
+                    </ul>
+                </div>
+                <div>
+                     <h4 class="font-bold mb-4 text-accent">Contacto</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li>+56 9 1234 5678</li>
+                        <li>contacto@huellasalcielo.cl</li>
+                        <li>Santiago, Chile</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 text-center text-xs text-gray-400">
+                <p>&copy; 2024 Huellas al Cielo. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function calculatePrice() {
+            const species = document.querySelector('input[name="species"]:checked').value;
+            const weight = document.getElementById('weight').value;
+            const service = document.getElementById('service').value;
+            const weightGroup = document.getElementById('weight-group');
+
+            // Hide weight for cats simpler logic
+            if (species === 'cat') {
+                weightGroup.classList.add('opacity-50', 'pointer-events-none');
+            } else {
+                weightGroup.classList.remove('opacity-50', 'pointer-events-none');
+            }
+
+            let price = 0;
+
+            if (species === 'cat') {
+                // Cat Pricing fixed
+                if (service === 'individual') price = 85000;
+                else price = 45000;
+            } else {
+                // Dog Pricing
+                if (service === 'individual') {
+                    if (weight === 'small') price = 85000;
+                    else if (weight === 'medium') price = 110000;
+                    else price = 140000;
+                } else {
+                    if (weight === 'small') price = 45000;
+                    else if (weight === 'medium') price = 65000;
+                    else price = 85000;
+                }
+            }
+
+            // Format CLT
+            const formatter = new Intl.NumberFormat('es-CL', {
+                style: 'currency',
+                currency: 'CLP',
+                minimumFractionDigits: 0
+            });
+
+            document.getElementById('price-display').innerText = formatter.format(price);
+        }
+
+        // Init
+        calculatePrice();
+    </script>
+</body>
+</html>

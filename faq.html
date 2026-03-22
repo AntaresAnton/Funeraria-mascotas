@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas Frecuentes | Huellas al Cielo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2C5F5D',
+                        secondary: '#F4F1EA',
+                        accent: '#D9A08B',
+                        dark: '#1a1a1a',
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'soft': '0 10px 40px -10px rgba(44, 95, 93, 0.1)',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #F4F1EA; color: #2C5F5D; }
+        .glass-nav { background: rgba(244, 241, 234, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] summary ~ * { animation: sweep .5s ease-in-out; }
+        @keyframes sweep { 0%    {opacity: 0; margin-top: -10px} 100%  {opacity: 1; margin-top: 0px} }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <!-- NAVIGATION -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
+                    <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zm1 11H9v-2h2v2zm0-4H9V5h2v4z"/></svg>
+                    </div>
+                    <span class="font-serif text-xl font-bold tracking-wide text-primary">Huellas al Cielo</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="index.html" class="text-sm font-medium text-primary/80 hover:text-accent transition-colors">Inicio</a>
+                    <a href="nosotros.html" class="text-sm font-medium text-primary/80 hover:text-accent transition-colors">Nosotros</a>
+                    <a href="servicios.html" class="text-sm font-medium text-primary/80 hover:text-accent transition-colors">Servicios</a>
+                    <a href="urnas.html" class="text-sm font-medium text-primary/80 hover:text-accent transition-colors">Urnas</a>
+                    <a href="memorial.html" class="text-sm font-medium text-primary/80 hover:text-accent transition-colors">Memorial</a>
+                    <a href="faq.html" class="text-sm font-medium text-primary font-bold">Preguntas</a>
+                    <a href="contacto.html" class="bg-primary hover:bg-[#1f4543] text-white px-5 py-2 rounded-full text-sm font-semibold transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5">Contactar</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HEADER TITLE -->
+    <section class="pt-32 pb-12 text-center px-4">
+        <h1 class="font-serif text-4xl md:text-5xl text-primary mb-4">Preguntas Frecuentes</h1>
+        <p class="text-gray-500 max-w-2xl mx-auto">Resolvemos tus dudas con claridad para que tomes la mejor decisión en este momento difícil.</p>
+    </section>
+
+    <!-- FAQ CONTENT -->
+    <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+        <div class="space-y-4">
+            
+            <!-- Category: Servicio -->
+            <h3 class="font-serif text-xl text-accent mt-8 mb-4">Sobre el Servicio</h3>
+            
+            <details class="group bg-white rounded-2xl shadow-sm border border-transparent hover:border-gray-100 transition-all open:ring-1 open:ring-accent/20">
+                <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6">
+                    <span class="text-pimary text-lg">¿Cómo funciona el retiro de la mascota?</span>
+                    <span class="transition group-open:rotate-180">
+                        <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                    </span>
+                </summary>
+                <div class="text-gray-500 px-6 pb-6 text-sm leading-relaxed">
+                    Nuestro equipo acude a tu domicilio o clínica veterinaria con equipo especializado y respetuoso (camilla y funda especial). Coordinamos el retiro usualmente dentro de 2 a 4 horas desde tu llamado, dependiendo de la ubicación.
+                </div>
+            </details>
+
+            <details class="group bg-white rounded-2xl shadow-sm border border-transparent hover:border-gray-100 transition-all open:ring-1 open:ring-accent/20">
+                <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6">
+                    <span class="text-pimary text-lg">¿Qué hago si fallece de noche o fin de semana?</span>
+                    <span class="transition group-open:rotate-180">
+                        <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                    </span>
+                </summary>
+                <div class="text-gray-500 px-6 pb-6 text-sm leading-relaxed">
+                    Operamos las 24 horas del día, los 365 días del año. Entendemos que estos momentos no tienen horario. Solo debes llamar a nuestro número de urgencias para coordinar.
+                </div>
+            </details>
+
+            <!-- Category: Proceso -->
+            <h3 class="font-serif text-xl text-accent mt-8 mb-4">Cremación y Cenizas</h3>
+
+            <details class="group bg-white rounded-2xl shadow-sm border border-transparent hover:border-gray-100 transition-all open:ring-1 open:ring-accent/20">
+                <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6">
+                    <span class="text-pimary text-lg">¿Cómo aseguran que son las cenizas de mi mascota?</span>
+                    <span class="transition group-open:rotate-180">
+                        <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                    </span>
+                </summary>
+                <div class="text-gray-500 px-6 pb-6 text-sm leading-relaxed">
+                    Utilizamos un sistema de trazabilidad con placa metálica numerada que acompaña a tu mascota durante todo el proceso. En la cremación individual, garantizamos que la cámara es utilizada únicamente por una mascota a la vez. Entregamos un certificado de autenticidad.
+                </div>
+            </details>
+
+            <details class="group bg-white rounded-2xl shadow-sm border border-transparent hover:border-gray-100 transition-all open:ring-1 open:ring-accent/20">
+                <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6">
+                    <span class="text-pimary text-lg">¿Cuánto tiempo demora la entrega?</span>
+                    <span class="transition group-open:rotate-180">
+                        <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                    </span>
+                </summary>
+                <div class="text-gray-500 px-6 pb-6 text-sm leading-relaxed">
+                    Para cremaciones individuales, el proceso completo y la entrega de la urna suele tomar entre 48 a 72 horas hábiles. La entrega se realiza personalmente en tu domicilio.
+                </div>
+            </details>
+
+             <details class="group bg-white rounded-2xl shadow-sm border border-transparent hover:border-gray-100 transition-all open:ring-1 open:ring-accent/20">
+                <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6">
+                    <span class="text-pimary text-lg">¿Puedo asistir a la cremación?</span>
+                    <span class="transition group-open:rotate-180">
+                        <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                    </span>
+                </summary>
+                <div class="text-gray-500 px-6 pb-6 text-sm leading-relaxed">
+                    Sí, ofrecemos la opción de "Despedida Presencial" con un costo adicional y previa coordinación. Disponemos de una sala de espera tranquila donde podrás estar mientras se realiza el proceso inicial.
+                </div>
+            </details>
+
+        </div>
+        
+        <!-- CTA -->
+        <div class="mt-16 text-center bg-white p-8 rounded-3xl shadow-sm">
+            <h3 class="font-serif text-xl text-primary mb-2">¿Tienes otra pregunta?</h3>
+            <p class="text-gray-500 text-sm mb-6">Nuestro equipo está disponible para explicarte cada detalle.</p>
+            <a href="contacto.html" class="inline-block bg-primary text-white font-bold px-8 py-3 rounded-full hover:bg-[#1f4543] transition-colors">Contactar Asesora</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-primary text-white pt-20 pb-10 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-xs text-gray-400">&copy; 2024 Huellas al Cielo.</p>
+        </div>
+    </footer>
+</body>
+</html>
