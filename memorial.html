@@ -5,39 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memorial Virtual | Huellas al Cielo</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#2C5F5D',
-                        secondary: '#F4F1EA',
-                        accent: '#D9A08B',
-                        dark: '#1a1a1a',
-                    },
-                    fontFamily: {
-                        serif: ['Playfair Display', 'serif'],
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    animation: {
-                        'fade-in': 'fadeIn 0.5s ease-out forwards',
-                    },
-                    keyframes: {
-                        fadeIn: {
-                            '0%': { opacity: '0', transform: 'translateY(10px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+    <script src="js/tailwind.config.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Inter', sans-serif; background-color: #F4F1EA; color: #2C5F5D; }
-        .glass-nav { background: rgba(244, 241, 234, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
-        .masonry-col { break-inside: avoid; margin-bottom: 1.5rem; }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="flex flex-col min-h-screen">
 
@@ -217,36 +187,12 @@
                 </div>
             </div>
             <div class="border-t border-white/10 pt-8 text-center text-xs text-gray-400">
-                <p>&copy; 2024 Huellas al Cielo. Todos los derechos reservados.</p>
+                <p>&copy; <span class="current-year">2026</span> Huellas al Cielo. Todos los derechos reservados.</p>
                 <p class="mt-1">Diseñado y construido por <a href="https://pquintanilla.cl" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Patricio Quintanilla</a></p>
             </div>
         </div>
     </footer>
 
-    <script>
-        function toggleModal(modalID){
-            const modal = document.getElementById(modalID);
-            modal.classList.toggle('hidden');
-        }
-
-        function lightCandle(btn) {
-            const icon = btn.querySelector('svg');
-            const countSpan = btn.querySelector('.candle-count');
-            
-            // Effect
-            icon.classList.toggle('text-yellow-400'); // Toggle yellow color
-            icon.classList.add('animate-pulse'); // Add pulse animation
-            
-            // Increment logic (simple simulation)
-            let count = parseInt(countSpan.innerText);
-            if(icon.classList.contains('text-yellow-400')) {
-                count++;
-            } else {
-                count--;
-                icon.classList.remove('animate-pulse');
-            }
-            countSpan.innerText = count;
-        }
-    </script>
+    <script src="js/main.js"></script>
 </body>
 </html>

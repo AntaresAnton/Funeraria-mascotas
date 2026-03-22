@@ -5,37 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Urnas y Relicarios | Huellas al Cielo</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#2C5F5D',
-                        secondary: '#F4F1EA',
-                        accent: '#D9A08B',
-                        dark: '#1a1a1a',
-                    },
-                    fontFamily: {
-                        serif: ['Playfair Display', 'serif'],
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    boxShadow: {
-                        'soft': '0 10px 40px -10px rgba(44, 95, 93, 0.1)',
-                        'card': '0 0 20px rgba(0,0,0,0.03)',
-                    },
-                    backgroundImage: {
-                        'hero-pattern': "url('https://www.transparenttextures.com/patterns/cubes.png')", 
-                    }
-                }
-            }
-        }
-    </script>
+    <script src="js/tailwind.config.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Inter', sans-serif; background-color: #F4F1EA; color: #2C5F5D; overflow-x: hidden; }
-        .glass-nav { background: rgba(244, 241, 234, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
-        .hero-text { text-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="antialiased flex flex-col min-h-screen">
 
@@ -246,58 +218,12 @@
                 </div>
             </div>
             <div class="border-t border-white/10 pt-8 text-center text-xs text-gray-400">
-                <p>&copy; 2024 Huellas al Cielo. Todos los derechos reservados.</p>
+                <p>&copy; <span class="current-year">2026</span> Huellas al Cielo. Todos los derechos reservados.</p>
                 <p class="mt-1">Diseñado y construido por <a href="https://pquintanilla.cl" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Patricio Quintanilla</a></p>
             </div>
         </div>
     </footer>
 
-    <script>
-        function filterSelection(c) {
-            var x, i;
-            x = document.getElementsByClassName("product-item");
-            if (c == "all") c = "";
-            
-            // Buttons style
-            var btns = document.getElementsByClassName("filter-btn");
-            for (i = 0; i < btns.length; i++) {
-                btns[i].classList.remove("bg-primary", "text-white", "border-primary");
-                btns[i].classList.add("bg-white", "text-gray-500", "border-gray-200");
-                if (window.event.currentTarget == btns[i]) {
-                    btns[i].classList.add("bg-primary", "text-white", "border-primary");
-                    btns[i].classList.remove("bg-white", "text-gray-500", "border-gray-200");
-                }
-            }
-
-            for (i = 0; i < x.length; i++) {
-                w3RemoveClass(x[i], "hidden");
-                if (x[i].className.indexOf(c) == -1) w3AddClass(x[i], "hidden");
-            }
-        }
-
-        function w3AddClass(element, name) {
-            var i, arr1, arr2;
-            arr1 = element.className.split(" ");
-            arr2 = name.split(" ");
-            for (i = 0; i < arr2.length; i++) {
-                if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
-            }
-        }
-
-        function w3RemoveClass(element, name) {
-            var i, arr1, arr2;
-            arr1 = element.className.split(" ");
-            arr2 = name.split(" ");
-            for (i = 0; i < arr2.length; i++) {
-                while (arr1.indexOf(arr2[i]) > -1) {
-                    arr1.splice(arr1.indexOf(arr2[i]), 1);     
-                }
-            }
-            element.className = arr1.join(" ");
-        }
-
-        // Init
-        // filterSelection("all") - Default logic handles it by not hiding anything initially
-    </script>
+    <script src="js/main.js"></script>
 </body>
 </html>

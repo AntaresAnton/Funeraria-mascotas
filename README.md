@@ -49,4 +49,4 @@ Diseñado y construido por **Patricio Quintanilla**.
 
 ---
 
-> *"Para Tomi. Gracias por tanto amor. Que este pequeño rincón digital sirva para honrar tu memoria y ayudar a otros a despedir a sus amigos con la dignidad que merecen."* 🌈
+> *"Para Tomi. Gracias por tanto amor. Que este pequeño rincón digital sirva para honrar tu memoria y ayudar a otros a despedir a sus amigos con la dignidad que merecen."*

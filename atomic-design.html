@@ -5,81 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Huellas al Cielo - Design System</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#2C5F5D',
-                        secondary: '#F4F1EA',
-                        accent: '#D9A08B',
-                    },
-                    fontFamily: {
-                        serif: ['Playfair Display', 'serif'],
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    boxShadow: {
-                        'soft': '0 4px 20px -2px rgba(44, 95, 93, 0.1)',
-                        'glow': '0 0 15px rgba(217, 160, 139, 0.5)',
-                    }
-                }
-            }
-        }
-    </script>
+    <script src="js/tailwind.config.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <style>
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background-color: #F4F1EA;
-            color: #2C5F5D;
-        }
-        h1, h2, h3 { font-family: 'Playfair Display', serif; }
-
-        /* Estilos Personalizados "Orgánicos" */
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.6);
-            box-shadow: 0 8px 32px 0 rgba(44, 95, 93, 0.05);
-        }
-
-        .soft-card-hover {
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        .soft-card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px -10px rgba(44, 95, 93, 0.15);
-        }
-
-        .btn-organic {
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(217, 160, 139, 0.3);
-        }
-        .btn-organic:hover {
-            transform: translateY(-2px) scale(1.02);
-            box-shadow: 0 8px 25px rgba(217, 160, 139, 0.4);
-        }
-        
-        .organic-border {
-            border-radius: 20px;
-        }
-
-        /* Degradado sutil para el Hero */
-        .hero-gradient {
-            background: linear-gradient(135deg, #2C5F5D 0%, #1f4543 100%);
-            position: relative;
-        }
-        .hero-pattern::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            opacity: 0.4;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="p-8">
 

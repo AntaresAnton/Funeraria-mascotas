@@ -1,0 +1,109 @@
+/* Base */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #F4F1EA;
+    color: #2C5F5D;
+    overflow-x: hidden;
+}
+
+/* Efecto Glassmorphism */
+.glass-nav {
+    background: rgba(244, 241, 234, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Máscara Orgánica para imágenes (Index) */
+.organic-mask {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    overflow: hidden;
+    transition: border-radius 0.5s ease-in-out;
+}
+.organic-mask:hover {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+}
+
+/* Animaciones (Index) */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+.animate-float {
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Memorial Masonry (Memorial) */
+.masonry-col {
+    break-inside: avoid;
+    margin-bottom: 1.5rem;
+}
+
+/* Background Patten (Nosotros) */
+.quote-bg {
+    background-image: radial-gradient(#D9A08B 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+/* Hero Text Shadow (Urnas) */
+.hero-text {
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+
+/* FAQ Details Animation */
+details > summary { list-style: none; }
+details > summary::-webkit-details-marker { display: none; }
+details[open] summary ~ * { animation: sweep .5s ease-in-out; }
+@keyframes sweep { 0% {opacity: 0; margin-top: -10px} 100% {opacity: 1; margin-top: 0px} }
+
+
+/* Atomic Design System Styles */
+h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+.glass-panel {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 8px 32px 0 rgba(44, 95, 93, 0.05);
+}
+
+.soft-card-hover {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.soft-card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px -10px rgba(44, 95, 93, 0.15);
+}
+
+.btn-organic {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(217, 160, 139, 0.3);
+}
+
+
+/* More Atomic Design... */
+.btn-organic:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(217, 160, 139, 0.4);
+}
+
+.organic-border {
+    border-radius: 20px;
+}
+
+/* Degradado sutil para el Hero */
+.hero-gradient {
+    background: linear-gradient(135deg, #2C5F5D 0%, #1f4543 100%);
+    position: relative;
+}
+.hero-pattern::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.4;
+}
